@@ -34,24 +34,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
       onClick={handleClick}
       className="group relative py-0 cursor-pointer flex flex-col h-full overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-md hover:shadow-xl transition-all duration-300"
     >
-      <div className="relative aspect-video overflow-hidden">
-        {product.video ? (
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src={product.video} type="video/mp4" />
-          </video>
-        ) : (
-          <img
-            src={product.image[0]}
-            alt={product.title}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        )}
+      <div className="relative aspect-video mb-0 overflow-hidden">
+        <img
+          src={product.image[3]}
+          alt={product.title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
         {product.isFeatured && (
           <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full shadow">
             Featured
